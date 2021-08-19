@@ -56,8 +56,11 @@ class FileUploadWidget(QLineEdit):
             file_ext = file_path[-4:].lower()
 
             logging.info("Type of the uploaded file: {}".format(file_ext))
-            logging.info("Path: ".format(file_path))
+            logging.info("Path: {} ".format(file_path))          
 
             # Storing widget state to reuse later.
             self.path = file_path
+
+            # Modify text with the info in path
+            self.setText(self.path)
             
